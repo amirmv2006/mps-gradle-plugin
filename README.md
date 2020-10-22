@@ -221,7 +221,9 @@ Parameters:
 * `mpsLocation` - optional location where to place the MPS files.
 * `javaExec` - optional `java` executable to use.
 * `plugins` - optional list of plugins to load before generation is attempted.
-  The notation is `new Plugin("someID", "somePath")`. Where the first parameter is the plugin id and the second the `short (folder) name`.
+  The notation is `new Plugin("someID", "somePath")`. Where the first parameter is the plugin id and the second
+   a `short (folder) name` in case the plugin should be loaded from the default `mps/plugins` location. For custom
+   plugin locations an `absolute path` is required.
 * `pluginLocation` - location where to load the plugins from. Structure needs to be a flat folder structure similar to the
   `plugins` directory inside of the MPS installation.
 * `models` - optional list of models to generate. If omitted all models in the project will be generated. Only full name
@@ -270,7 +272,9 @@ Parameters:
 * `mpsLocation` - optional location where to place the MPS files.
 * `javaExec` - optional `java` executable to use.
 * `plugins` - optional list of plugins to load before model check is attempted.
-  The notation is `new Plugin("someID", "somePath")`. Where the first parameter is the plugin id and the second the `short (folder) name`.
+  The notation is `new Plugin("someID", "somePath")`.  Where the first parameter is the plugin id and the second
+ a `short (folder) name` in case the plugin should be loaded from the default `mps/plugins` location. For custom
+  plugin locations an `absolute path` is required.
 * `pluginLocation` - location where to load the plugins from. Structure needs to be a flat folder structure similar to the
   `plugins` directory inside of the MPS installation.
 * `models` - optional list of models to check. RegEx can be used for matching multiple models.

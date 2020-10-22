@@ -100,7 +100,14 @@ fun <T> executeWithProject(project: File,
 
     val cfg = basicEnvironmentConfig()
 
-    plugins.forEach { cfg.addPreInstalledPlugin(it.path, it.id) }
+    plugins.forEach {
+            if (File(it.path).isAbsolute) {
+                cfg.addPlugin(it.path, it.id)
+            }
+            else {
+                cfg.addPreInstalledPlugin(it.path, it.id)
+            }
+        }
     macros.forEach { cfg.addMacro(it.name, File(it.value)) }
 
     val ideaEnvironment = IdeaEnvironment(cfg)
